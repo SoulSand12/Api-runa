@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Menjamin padding/margin dihitung dengan benar */
+  height: 100%; /* Pastikan elemen memenuhi layar */
+  width: 100%;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Menggunakan lebar penuh viewport */
+  height: 100vh; /* Menggunakan tinggi penuh viewport */
+  background-image: url('./nishimiya0.jpg'); /* Gambar latar belakang */
+  background-size: cover; /* Agar gambar mengisi seluruh area */
+  background-position: center; /* Pusatkan gambar */
+  
+  z-index: -1; /* Letakkan di belakang konten lainnya */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+  .container {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius:30px ;
+    margin: 200px auto;
+    position: relative;
+    box-shadow: 3px 3px 15px gray;
+  }
+  .container img {
+    width: 100%;
+    transition: .4s;
+  }
+  .info {
+    position:absolute;
+    bottom: 0;
+    background-color: #00000085;
+    text-align: center;
+    padding: 15px 5px;
+    color: #fff;
+    box-shadow:0 -3px 13px #ffffff73, inset 0 -25px #fafafa75;
+    border-radius:10px;
+    transition: .3s ease-in-out;
+    bottom: -100%;
+  }
+  .info h3 {
+    margin: 0;
+    letter-spacing: 4px;
+  }
+  .info p {
+    line-height: 1;
+    margin: 10px 0;
+  }
+  .info a button {
+    text-decoration: none;
+    color: 000;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 20px;
+    margin:0;
+    cursor:pointer;
+  }
+  .container:hover .info {
+    bottom: 0;
+  }
+  .container:hover img {
+    transform: scale(1.5);
+  }
+  .popup-info {
+    width: 300px;
+    height: fit-content;
+    background-color: lightgray;
+    padding: 15px;
+    position: fixed;
+    top: 35%;
+    left:10%;
+    border-radius: 10px;
+    display: none;
+  }
+  .popup-info a {
+    position: absolute;
+    top: -20px;
+    right:-20px;
+    background-color:#3d3d3d;
+    color:#fff;
+    text-decoration: none;
+    padding: 10px 13px;
+    border-radius: 50px;
+  }
+  button {
+    text-decoration: none;
+    color: 000;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 20px;
+    margin:0;
+    cursor:pointer;
+  }
+  #popup-info:target {
+    display: block;
+  }
+</style>
+<body>
+  <div class="container">
+    <img src="nishimiya00.jpg" id="imgs">
+    <div class="info">
+      <h3>IMAGE</h3>
+      <p id="p">Nishimiya Shouko adalah gadis tuli berusia 11 tahun. Dia sering dibuli karena keterbatasan pendengarannya. Meskipun demikian, dia tetap baik hati dan berusaha berkomunikasi. Walaupun begitu, dia adalah istri admin tercinta, dan admin selalu mencintai Nishimiya sepanjang waktu
+      <a href="#popup-info">
+        <button>Read more</button>
+      </a>
+    </div>
+  </div>
+  <div class="popup-info" id="popup-info">
+    <a href="#">X</a>
+    <h2>IMAGE</h2>
+    <p id="p2">Nishimiya Shouko adalah karakter utama dalam manga dan anime A Silent Voice (Koe no Katachi) karya Yoshitoki Oima. Shouko adalah seorang gadis yang tuli sejak lahir, yang mengalami banyak kesulitan dan perundungan (bullying) selama masa kecilnya karena ketidakmampuannya untuk mendengar. Meskipun sering disisihkan oleh teman-temannya, ia tetap memiliki sifat yang baik hati dan berusaha untuk berkomunikasi dengan orang lain, terutama dengan mereka yang telah menyakitinya. Kisah Shouko menggambarkan perjuangannya untuk diterima di dunia yang tidak sepenuhnya memahami kondisinya, serta usahanya untuk menyembuhkan luka batin akibat masa lalunya yang penuh dengan kesepian dan pengucilan.
+    </p>
+  </div>
+</body>
+</html>
